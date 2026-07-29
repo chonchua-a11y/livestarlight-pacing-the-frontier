@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-site-gold: #857251;
+  --color-star-gold: #c4903a;
+  --color-ink: #212121;
+  --color-mid-gray: #6a6a6a;
+  --color-parchment: #f0ebe0;
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}

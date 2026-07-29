@@ -1,0 +1,6 @@
+{
+  "name": "Pacing the Frontier",
+  "description": "Minimalistic access hub for Google Drive media assets: explainer video, PDF slide deck, podcast audio track, and high-res infographic diagram.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

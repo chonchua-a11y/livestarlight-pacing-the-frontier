@@ -1,0 +1,12 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Raw originals (source PDFs/PPTX/zip exports) — not needed in the repo,
+# the processed versions actually used by the app live in public/assets/
+_source-files/
