@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExternalLink, HardDrive } from 'lucide-react';
 import { DriveFolderInfo } from '../types';
+import { SITE_CONFIG } from '../data/siteConfig';
 
 interface HeroBannerProps {
   folderInfo: DriveFolderInfo;
@@ -13,17 +14,17 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ folderInfo }) => {
         {/* Minimal Pill Tag */}
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-parchment text-site-gold text-xs font-medium border border-parchment">
           <HardDrive className="w-3.5 h-3.5 text-star-gold" />
-          <span>Google Drive Package • 4 Core Files</span>
+          <span>{SITE_CONFIG.heroPillLabel}</span>
         </div>
 
         {/* Title */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-ink leading-tight">
-          Pacing the Frontier
+          {SITE_CONFIG.title}
         </h1>
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg text-ink font-normal leading-relaxed max-w-2xl">
-          Over 1,200 employees from major artificial intelligence labs have issued a collective warning titled "Pacing the Frontier" regarding the dangerous speed of AI development. These industry experts argue that the race to automate AI research could lead to capabilities that outpace our ability to maintain human control or ensure safety. Because individual companies face competitive pressures that prevent them from slowing down independently, the group is calling for international governance and government-supported tools to manage this growth. The signatories, including high-level leaders from OpenAI, Anthropic, and Meta, emphasize that while the technology offers immense potential, it also presents unprecedented social and existential risks. They ultimately advocate for a more intentional and coordinated approach to innovation to prevent a catastrophic lack of oversight.
+          {SITE_CONFIG.heroDescription}
         </p>
 
         {/* Action Link & Folder ID */}

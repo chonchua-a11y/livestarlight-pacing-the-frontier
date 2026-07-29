@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExternalLink, Copy, Check } from 'lucide-react';
 import { DriveFolderInfo } from '../types';
+import { SITE_CONFIG } from '../data/siteConfig';
 
 interface HeaderProps {
   folderInfo: DriveFolderInfo;
@@ -19,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({ folderInfo }) => {
     <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-parchment text-ink">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         {/* Minimalist Branding */}
-        <a href="https://livestarlight.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 group">
+        <a href={SITE_CONFIG.websiteUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 group">
           <img
             src="/assets/lsl-v4.jpeg"
             alt="LiveStarLight"
@@ -27,9 +28,9 @@ export const Header: React.FC<HeaderProps> = ({ folderInfo }) => {
           />
           <div>
             <h1 className="text-base font-medium tracking-tight text-ink leading-none group-hover:text-site-gold transition-colors">
-              Pacing the Frontier
+              {SITE_CONFIG.title}
             </h1>
-            <p className="text-[11px] text-mid-gray font-normal">By Chon "Choon" Chua · LiveStarLight</p>
+            <p className="text-[11px] text-mid-gray font-normal">{SITE_CONFIG.byline}</p>
           </div>
         </a>
 

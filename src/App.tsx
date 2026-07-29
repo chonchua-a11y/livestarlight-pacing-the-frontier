@@ -1,6 +1,7 @@
 import React from 'react';
 import { DriveResource, DriveFolderInfo } from './types';
 import { INITIAL_FOLDER_INFO, DRIVE_RESOURCES } from './data/driveResources';
+import { SITE_CONFIG } from './data/siteConfig';
 import { Header } from './components/Header';
 import { HeroBanner } from './components/HeroBanner';
 import { ResourceCard } from './components/ResourceCard';
@@ -44,7 +45,7 @@ export default function App() {
       <footer className="bg-white border-t border-parchment py-6 text-center text-xs text-mid-gray">
         <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <a
-            href="https://livestarlight.com"
+            href={SITE_CONFIG.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 group"
@@ -55,23 +56,23 @@ export default function App() {
               className="w-16 h-16 rounded-xl object-cover"
             />
             <div className="flex flex-col items-start gap-0.5">
-              <p className="font-medium text-ink">Pacing the Frontier</p>
+              <p className="font-medium text-ink">{SITE_CONFIG.title}</p>
               <span className="text-star-gold group-hover:text-site-gold font-medium group-hover:underline">
-                A LiveStarLight Research Brief
+                {SITE_CONFIG.footerByline}
               </span>
             </div>
           </a>
           <div className="flex flex-col items-center sm:items-end gap-1.5">
             <div className="flex items-center gap-3 text-mid-gray">
-              <a href="https://livestarlight.com" target="_blank" rel="noopener noreferrer" className="hover:text-site-gold hover:underline">
+              <a href={SITE_CONFIG.websiteUrl} target="_blank" rel="noopener noreferrer" className="hover:text-site-gold hover:underline">
                 livestarlight.com
               </a>
               <span>•</span>
-              <a href="https://www.linkedin.com/company/livestarlight/" target="_blank" rel="noopener noreferrer" className="hover:text-site-gold hover:underline">
+              <a href={SITE_CONFIG.linkedinCompanyUrl} target="_blank" rel="noopener noreferrer" className="hover:text-site-gold hover:underline">
                 LiveStarLight on LinkedIn
               </a>
             </div>
-            <a href="https://www.linkedin.com/in/chonchua" target="_blank" rel="noopener noreferrer" className="text-mid-gray hover:text-site-gold hover:underline">
+            <a href={SITE_CONFIG.linkedinPersonalUrl} target="_blank" rel="noopener noreferrer" className="text-mid-gray hover:text-site-gold hover:underline">
               Connect with Choon on LinkedIn
             </a>
           </div>
