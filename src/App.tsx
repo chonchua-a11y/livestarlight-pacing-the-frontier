@@ -1,6 +1,6 @@
 import React from 'react';
-import { DriveResource, DriveFolderInfo } from './types';
-import { INITIAL_FOLDER_INFO, DRIVE_RESOURCES } from './data/driveResources';
+import { DriveResource } from './types';
+import { DRIVE_RESOURCES } from './data/driveResources';
 import { SITE_CONFIG } from './data/siteConfig';
 import { Header } from './components/Header';
 import { HeroBanner } from './components/HeroBanner';
@@ -11,7 +11,6 @@ import { AudioPlayerViewerModal } from './components/AudioPlayerViewerModal';
 import { InfographicViewerModal } from './components/InfographicViewerModal';
 
 export default function App() {
-  const [folderInfo] = React.useState<DriveFolderInfo>(INITIAL_FOLDER_INFO);
   const [resources] = React.useState<DriveResource[]>(DRIVE_RESOURCES);
 
   // Active Preview Modal
@@ -20,12 +19,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-ink font-sans flex flex-col selection:bg-star-gold selection:text-white">
       {/* Top Header */}
-      <Header folderInfo={folderInfo} />
+      <Header />
 
       {/* Main Content */}
       <main className="flex-1">
         {/* Minimal Hero Title Section */}
-        <HeroBanner folderInfo={folderInfo} />
+        <HeroBanner />
 
         {/* 4 Files Minimalist Grid */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">

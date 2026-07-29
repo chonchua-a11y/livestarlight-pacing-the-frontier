@@ -1,13 +1,8 @@
 import React from 'react';
-import { ExternalLink, HardDrive } from 'lucide-react';
-import { DriveFolderInfo } from '../types';
+import { HardDrive } from 'lucide-react';
 import { SITE_CONFIG } from '../data/siteConfig';
 
-interface HeroBannerProps {
-  folderInfo: DriveFolderInfo;
-}
-
-export const HeroBanner: React.FC<HeroBannerProps> = ({ folderInfo }) => {
+export const HeroBanner: React.FC = () => {
   return (
     <div className="bg-white border-b border-parchment py-10 md:py-14 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto space-y-4">
@@ -26,23 +21,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ folderInfo }) => {
         <p className="text-base sm:text-lg text-ink font-normal leading-relaxed max-w-2xl">
           {SITE_CONFIG.heroDescription}
         </p>
-
-        {/* Action Link & Folder ID */}
-        <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-mid-gray font-mono">
-          <span>Folder ID: <span className="text-ink font-medium">{folderInfo.id}</span></span>
-          <span>•</span>
-          <a
-            href={folderInfo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-star-gold hover:text-site-gold font-medium hover:underline font-sans text-xs"
-          >
-            <span>View source files in Google Drive</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-        </div>
       </div>
     </div>
   );
 };
-

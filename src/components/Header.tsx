@@ -1,21 +1,7 @@
 import React from 'react';
-import { ExternalLink, Copy, Check } from 'lucide-react';
-import { DriveFolderInfo } from '../types';
 import { SITE_CONFIG } from '../data/siteConfig';
 
-interface HeaderProps {
-  folderInfo: DriveFolderInfo;
-}
-
-export const Header: React.FC<HeaderProps> = ({ folderInfo }) => {
-  const [copied, setCopied] = React.useState(false);
-
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(folderInfo.url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
+export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-parchment text-ink">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
@@ -33,37 +19,6 @@ export const Header: React.FC<HeaderProps> = ({ folderInfo }) => {
             <p className="text-[11px] text-mid-gray font-normal">{SITE_CONFIG.byline}</p>
           </div>
         </a>
-
-        {/* Minimal Actions */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={handleCopyLink}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-mid-gray hover:text-ink hover:bg-parchment transition-colors"
-            title="Copy Drive Link"
-          >
-            {copied ? (
-              <>
-                <Check className="w-3.5 h-3.5 text-emerald-600" />
-                <span className="text-emerald-700 font-medium">Copied</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-3.5 h-3.5 text-mid-gray" />
-                <span>Share Link</span>
-              </>
-            )}
-          </button>
-
-          <a
-            href={folderInfo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-medium bg-site-gold hover:bg-star-gold text-white transition-all shadow-xs"
-          >
-            <span>Open Drive</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-        </div>
       </div>
     </header>
   );
