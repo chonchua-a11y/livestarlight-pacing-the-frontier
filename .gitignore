@@ -10,3 +10,4 @@ coverage/
 # Raw originals (source PDFs/PPTX/zip exports) — not needed in the repo,
 # the processed versions actually used by the app live in public/assets/
 _source-files/
+.vercel

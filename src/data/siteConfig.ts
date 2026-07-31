@@ -6,7 +6,11 @@ export const SITE_CONFIG = {
   title: 'Pacing the Frontier',
   byline: 'By Chon "Choon" Chua · LiveStarLight',
   footerByline: 'A LiveStarLight Research Brief',
-  websiteUrl: 'https://livestarlight.com',
+  // Must be www. The naked apex livestarlight.com has no TLS cert and 404s
+  // over plain HTTP, so linking to it sends people to a browser error page.
+  websiteUrl: 'https://www.livestarlight.com',
+  // Where a reader lands when they finish a brief: the page listing the others.
+  researchUrl: 'https://www.livestarlight.com/research',
   linkedinCompanyUrl: 'https://www.linkedin.com/company/livestarlight/',
   linkedinPersonalUrl: 'https://www.linkedin.com/in/chonchua',
   heroPillLabel: 'Google Drive Package • 4 Core Files',

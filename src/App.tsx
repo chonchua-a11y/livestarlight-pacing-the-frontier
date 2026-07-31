@@ -44,7 +44,7 @@ export default function App() {
       <footer className="bg-white border-t border-parchment py-6 text-center text-xs text-mid-gray">
         <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <a
-            href={SITE_CONFIG.websiteUrl}
+            href={SITE_CONFIG.researchUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 group"
